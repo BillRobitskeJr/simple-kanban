@@ -1,0 +1,32 @@
+{
+  "name": "simple-kanban",
+  "version": "1.0.0",
+  "description": "A basic kanban board interface that can be easily integrated with your own card/list storage methods",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack --mode=development",
+    "build-prod": "webpack --mode=production",
+    "watch-dev": "webpack --mode=development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BillRobitskeJr/simple-kanban.git"
+  },
+  "keywords": [
+    "kanban",
+    "vanillajs"
+  ],
+  "author": "Bill Robitske, Jr. <bill.robitske.jr@gmail.com> (https://github.com/BillRobitskeJr)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BillRobitskeJr/simple-kanban/issues"
+  },
+  "homepage": "https://github.com/BillRobitskeJr/simple-kanban#readme",
+  "devDependencies": {
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
