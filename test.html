@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Kanban Test</title>
+    <!-- Load Bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <!-- Load Simple Kanban -->
+    <script src="dist/simple-kanban.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        BRJ.SimpleKanban.attachBoard('#test-board', {
+          name: 'Test Board'
+        });
+        const list1 = new BRJ.SimpleKanban.ListView();
+        list1.title = 'Test List 1';
+        BRJ.SimpleKanban._testAddList('#test-board', list1);
+        const list2 = new BRJ.SimpleKanban.ListView();
+        list2.title = 'Test List 2';
+        const card1 = new BRJ.SimpleKanban.CardView();
+        card1.update(new BRJ.SimpleKanban.Card({
+          title: 'Test Card 1',
+          added: new Date(2018, 3, 14)
+        }));
+        const card2 = new BRJ.SimpleKanban.CardView();
+        card2.update(new BRJ.SimpleKanban.Card({
+          title: 'Test Card 2',
+          added: new Date(2018, 3, 14),
+          description: 'A card with a description and a due date.',
+          due: new Date(2018, 4, 1)
+        }));
+        list2.addCardView(card1).addCardView(card2);
+        BRJ.SimpleKanban._testAddList('#test-board', list2);
+        const list3 = new BRJ.SimpleKanban.ListView();
+        list3.title = 'Test Card 3';
+        BRJ.SimpleKanban._testAddList('#test-board', list3);
+      });
+    </script>
+  </head>
+  <body>
+    <div id="test-board"></div>
+  </body>
+</html>
